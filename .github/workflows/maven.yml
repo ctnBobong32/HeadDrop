@@ -1,10 +1,12 @@
-# 此工作流将使用 Maven 构建 Java 项目，并通过缓存/恢复依赖项来提高工作流执行效率
-# 更多信息请参考：https://docs.github.com/zh/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
 
-# 此工作流使用未经 GitHub 认证的操作。
-# 它们由第三方提供，并受单独的服务条款、隐私政策和支持文档的约束。
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
 
-name: Maven Java 持续集成
+name: Java CI with Maven
 
 on:
   push:
@@ -19,15 +21,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: 设置 JDK 17
+    - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: 使用 Maven 构建项目
+    - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    # 可选：将完整的依赖关系图上传到 GitHub，以提高此仓库可以接收的 Dependabot 警报的质量
-    - name: 更新依赖关系图
+    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
+    - name: Update dependency graph
       uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
