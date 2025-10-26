@@ -1,0 +1,689 @@
+# 感谢使用 HeadDrop 插件
+# 如需报告错误或提出建议，请加入 https://discord.gg/fV4P2yMSgR
+
+# 配置文件版本 - 请勿修改
+Config:
+  Version: ${project.version}
+  # 是否需要玩家击杀才能掉落头颅
+  Require-Killer-Player: true
+  # 是否启用抢夺附魔加成
+  Enable-Looting: false
+  # 幼年生物是否也会掉落头颅
+  Baby-HeadDrop: false
+  # 权限加成：headdrop.chance.{数字} 将为玩家提供额外的掉落几率 (1-100)
+  Enable-Perm-Chance: false
+  # 是否削弱刷怪笼：来自刷怪笼的生物不会掉落头颅
+  Nerf-Spawner: false
+  # 是否启用悬赏功能（仅高级版）
+  Bounties: false
+  # 在这些世界中禁用头颅掉落
+  Disable-Worlds:
+    - demoWorld
+    - demoWorld2
+
+# 掉落头颅所需的武器配置
+Require-Weapon:
+  # 是否启用武器要求
+  Enable: false
+  # 允许的武器列表
+  Weapons:
+    - Diamond_Axe
+
+# 数据库功能配置
+Database:
+  # 是否启用数据库
+  Enable: false
+  # 如果服务器处于离线模式，请设置为 false
+  Online: true
+  # 数据库连接URL
+  URL: "jdbc:sqlite:HeadDrop.sqlite"
+  # 数据库用户名
+  User:
+  # 数据库密码
+  Password:
+  # 自动清理数据库：如果玩家不活跃超过指定天数
+  Cleanup: 30
+
+# 排行榜网站配置
+Web:
+  # 是否启用网站
+  Enable: false
+  # 网站端口
+  Port: 8080
+  # 网站访问端点
+  Endpoint: "leaderboard"
+
+# Discord机器人通知配置（需要 DiscordUtils 插件）
+Bot:
+  # 是否启用机器人
+  Enable: false
+  # Discord频道ID
+  Channel-ID: ""
+  # 消息标题
+  Title: "头颅掉落"
+  # 消息描述
+  Description: "{KILLER} 使用 {WEAPON} 击杀了 {MOB} 并获得了头颅！"
+  # 消息页脚
+  Footer: "HeadDrop by RRS"
+
+# 掉落时的特效配置（仅高级版）
+Effects:
+  # 是否启用特效
+  Enabled: true
+  # 粒子效果类型
+  Particle: FLAME
+  # 粒子数量
+  Count: 10
+  # X轴偏移
+  OffsetX: 0.5
+  # Y轴偏移
+  OffsetY: 0.5
+  # Z轴偏移
+  OffsetZ: 0.5
+  # 粒子速度
+  Speed: 0.1
+  # 音效类型
+  Sound: ENTITY_PLAYER_LEVELUP
+  # 音量
+  Volume: 1.0
+  # 音调
+  Pitch: 1.0
+
+# 头颅物品的Lore描述（如果要禁用某行Lore，请留空）
+Lores:
+  - "击杀者：{KILLER}"
+  - "击杀日期：{DATE}"
+  - "使用武器：{WEAPON}"
+
+# 实体配置说明：
+# Drop -> 禁用后将恢复原版行为
+# Chance -> 掉落头颅的几率
+# Sound -> 头颅在音符盒中发出的声音
+# Point -> 每次掉落获得的积分（需要启用数据库）
+
+# 玩家头颅配置
+PLAYER:
+  Drop: true
+  Chance: 100.00
+  Point: 1
+
+# 僵尸头颅配置
+ZOMBIE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 凋灵骷髅头颅配置
+WITHER_SKELETON:
+  Drop: false
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 苦力怕头颅配置
+CREEPER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 骷髅头颅配置
+SKELETON:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 美西螈头颅配置
+AXOLOTL:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 蝙蝠头颅配置
+BAT:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 蜜蜂头颅配置
+BEE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 烈焰人头颅配置
+BLAZE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 猫头颅配置
+CAT:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 海豚头颅配置
+DOLPHIN:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 溺尸头颅配置
+DROWNED:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 蜘蛛头颅配置
+SPIDER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 洞穴蜘蛛头颅配置
+CAVE_SPIDER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 鸡头颅配置
+CHICKEN:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 末影人头颅配置
+ENDERMAN:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 牛头颅配置
+COW:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 末影螨头颅配置
+ENDERMITE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 唤魔者头颅配置
+EVOKER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 驴头颅配置
+DONKEY:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 狐狸头颅配置
+FOX:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 绵羊头颅配置
+SHEEP:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 巨人头颅配置
+GIANT:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 疣猪兽头颅配置
+HOGLIN:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 尸壳头颅配置
+HUSK:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 山羊头颅配置
+GOAT:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 铁傀儡头颅配置
+IRON_GOLEM:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 幻术师头颅配置
+ILLUSIONER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 马头颅配置
+HORSE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 守卫者头颅配置
+GUARDIAN:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 哞菇头颅配置
+MOOSHROOM:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 豹猫头颅配置
+OCELOT:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 幻翼头颅配置
+PHANTOM:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 发光鱿鱼头颅配置
+GLOW_SQUID:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 猪头颅配置
+PIG:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 羊驼头颅配置
+LLAMA:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 骡子头颅配置
+MULE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 猪灵头颅配置
+PIGLIN:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 猪灵蛮兵头颅配置
+PIGLIN_BRUTE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 远古守卫者头颅配置
+ELDER_GUARDIAN:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 河豚头颅配置
+PUFFERFISH:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 蠹虫头颅配置
+SILVERFISH:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 北极熊头颅配置
+POLAR_BEAR:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 鲑鱼头颅配置
+SALMON:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 潜影贝头颅配置
+SHULKER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 流浪者头颅配置
+STRAY:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 炽足兽头颅配置
+STRIDER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 骷髅马头颅配置
+SKELETON_HORSE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 掠夺者头颅配置
+PILLAGER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 鱿鱼头颅配置
+SQUID:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 流浪商人头颅配置
+WANDERING_TRADER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 海龟头颅配置
+TURTLE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 史莱姆头颅配置
+SLIME:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 鳕鱼头颅配置
+COD:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 劫掠兽头颅配置
+RAVAGER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 女巫头颅配置
+WITCH:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 恶魂头颅配置
+GHAST:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 僵尸马头颅配置
+ZOMBIE_HORSE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 狼头颅配置
+WOLF:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 卫道士头颅配置
+VINDICATOR:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 僵尸疣猪兽头颅配置
+ZOGLIN:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 商贩羊驼头颅配置
+TRADER_LLAMA:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 僵尸村民头颅配置
+ZOMBIE_VILLAGER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 末影龙头颅配置
+ENDER_DRAGON:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 凋灵头颅配置
+WITHER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 村民头颅配置
+VILLAGER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 鹦鹉头颅配置
+PARROT:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 热带鱼头颅配置
+TROPICAL_FISH:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 恼鬼头颅配置
+VEX:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 僵尸猪灵头颅配置
+ZOMBIFIED_PIGLIN:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 岩浆怪头颅配置
+MAGMA_CUBE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 熊猫头颅配置
+PANDA:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 雪傀儡头颅配置
+SNOW_GOLEM:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 兔子头颅配置
+RABBIT:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 悦灵头颅配置
+ALLAY:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 蝌蚪头颅配置
+TADPOLE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 青蛙头颅配置
+FROG:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 监守者头颅配置
+WARDEN:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 骆驼头颅配置
+CAMEL:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 嗅探兽头颅配置
+SNIFFER:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 微风头颅配置
+BREEZE:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 沼泽骷髅头颅配置
+BOGGED:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 犰狳头颅配置
+ARMADILLO:
+  Drop: true
+  Chance: 100.00
+  Sound: "default"
+  Point: 1
+
+# 吱吱头颅配置
+CREAKING:
+  Drop: true
+  Chance: 50.00
+  Sound: "default"
+  Point: 1

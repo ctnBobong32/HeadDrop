@@ -1,0 +1,100 @@
+# 插件名称
+name: HeadDrop
+# 插件版本
+version: '${project.version}'
+# 主类路径
+main: me.rrs.headdrop.HeadDrop
+# 支持的API版本
+api-version: 1.13
+# 是否支持Folia服务器
+folia-supported: true
+# 作者
+author: RRS
+# 插件前缀
+prefix: HeadDrop
+# 软依赖插件
+softdepend:
+  - PlaceholderAPI
+  - WorldGuard
+  - Geyser-Spigot
+  - DiscordUtils
+
+# 命令配置
+commands:
+  # 获取头颅命令
+  head:
+    # 命令别名
+    aliases:
+      - skull
+    # 命令描述
+    description: 获取玩家头颅
+    # 命令权限
+    permission: headdrop.head
+    # 使用说明
+    usage: /head <玩家名称>
+
+  # 主命令
+  headdrop:
+    # 命令别名
+    aliases:
+      - hd
+    # 命令描述
+    description: HeadDrop插件主命令
+
+# 权限配置
+permissions:
+  # 重载插件配置权限
+  headdrop.reload:
+    description: 允许玩家重载HeadDrop插件配置
+    default: op
+
+  # 查看排行榜权限
+  headdrop.view.leaderboard:
+    description: 允许玩家查看头颅收集排行榜
+    default: true
+
+  # 打开GUI界面权限
+  headdrop.gui.view:
+    description: 允许玩家打开HeadDrop GUI界面
+    default: true
+
+  # 获取头颅权限
+  headdrop.head:
+    description: 允许玩家获取自己或其他玩家的头颅
+    default: op
+
+  # 触发头颅掉落权限
+  headdrop.killer:
+    description: 允许玩家触发生物头颅掉落
+    default: true
+
+  # 掉落自己头颅权限
+  headdrop.player:
+    description: 允许玩家掉落自己的头颅
+    default: true
+
+  # 移动GUI物品权限
+  headdrop.gui.move:
+    description: 允许玩家在HeadDrop GUI中移动物品
+    default: op
+
+  # 接收更新通知权限
+  headdrop.notify:
+    description: 允许玩家接收HeadDrop更新通知
+    default: op
+
+  # 管理员权限（包含所有子权限）
+  headdrop.admin:
+    description: 允许管理员级别的头颅掉落设置控制
+    default: op
+    # 子权限
+    children:
+      headdrop.reload: true
+      headdrop.head: true
+      headdrop.gui.move: true
+      headdrop.notify: true
+
+# 依赖库
+libraries:
+  - com.zaxxer:HikariCP:6.3.0
+  - org.json:json:20250517

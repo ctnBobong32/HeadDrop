@@ -1,0 +1,210 @@
+# 插件版本 - 请勿修改
+Version: ${project.version}
+
+# 新悬赏公告间隔（分钟）
+BroadcastInterval: 5
+
+# 最大活跃悬赏数量
+MaxActiveBounties: 1
+
+# 悬赏激活时显示的消息
+ActivationMessage: "§6新悬赏任务！§7击杀 {mob} 获得丰厚奖励！"
+
+# 完成悬赏时显示的消息
+CompletionMessage: "§a你成功完成了 {mob} 悬赏任务！"
+
+# 悬赏完成时的广播消息
+BroadcastMessage: "§e{player} §a成功完成了 {mob} 悬赏任务！"
+
+# 悬赏过期时显示的消息
+ExpireMessage: "§c{mob} 悬赏任务已过期！"
+
+# 悬赏任务配置
+Bounties:
+  # 僵尸悬赏
+  ZOMBIE:
+    # 奖励物品
+    Reward:
+      # 腐肉
+      - "ITEM:ROTTEN_FLESH:16"
+      # 铁锭
+      - "ITEM:IRON_INGOT:3"
+      # 力量效果
+      - "COMMAND:effect give {player} strength 30 0"
+    # 需要击杀数量
+    RequiredKills: 10
+    # 金钱奖励
+    MoneyReward: 50.0
+    # 经验奖励
+    ExperienceReward: 20
+    # 持续时间（分钟）
+    Duration: 10
+
+  # 骷髅悬赏
+  SKELETON:
+    # 奖励物品
+    Reward:
+      # 骨头
+      - "ITEM:BONE:16"
+      # 箭
+      - "ITEM:ARROW:32"
+      # 弓
+      - "ITEM:BOW:1"
+    # 需要击杀数量
+    RequiredKills: 8
+    # 金钱奖励
+    MoneyReward: 60.0
+    # 经验奖励
+    ExperienceReward: 25
+    # 持续时间（分钟）
+    Duration: 12
+
+  # 苦力怕悬赏
+  CREEPER:
+    # 奖励物品
+    Reward:
+      # 火药
+      - "ITEM:GUNPOWDER:8"
+      # TNT
+      - "ITEM:TNT:5"
+      # 召唤闪电
+      - "COMMAND:summon lightning_bolt ~ ~ ~"
+    # 需要击杀数量
+    RequiredKills: 5
+    # 金钱奖励
+    MoneyReward: 75.0
+    # 经验奖励
+    ExperienceReward: 30
+    # 持续时间（分钟）
+    Duration: 8
+
+  # 烈焰人悬赏
+  BLAZE:
+    # 奖励物品
+    Reward:
+      # 烈焰棒
+      - "ITEM:BLAZE_ROD:4"
+      # 金锭
+      - "ITEM:GOLD_INGOT:8"
+      # 防火效果
+      - "COMMAND:effect give {player} fire_resistance 600 0"
+    # 需要击杀数量
+    RequiredKills: 3
+    # 金钱奖励
+    MoneyReward: 150.0
+    # 经验奖励
+    ExperienceReward: 50
+    # 持续时间（分钟）
+    Duration: 15
+
+  # 凋灵骷髅悬赏
+  WITHER_SKELETON:
+    # 奖励物品
+    Reward:
+      # 煤炭
+      - "ITEM:COAL:16"
+      # 骨头
+      - "ITEM:BONE:12"
+      # 下界之星
+      - "ITEM:NETHER_STAR:1"
+    # 需要击杀数量
+    RequiredKills: 2
+    # 金钱奖励
+    MoneyReward: 200.0
+    # 经验奖励
+    ExperienceReward: 75
+    # 持续时间（分钟）
+    Duration: 20
+
+  # 守卫者悬赏
+  GUARDIAN:
+    # 奖励物品
+    Reward:
+      # 海晶砂粒
+      - "ITEM:PRISMARINE_SHARD:16"
+      # 海绵
+      - "ITEM:SPONGE:2"
+      # 熟鳕鱼
+      - "ITEM:COOKED_COD:8"
+    # 需要击杀数量
+    RequiredKills: 6
+    # 金钱奖励
+    MoneyReward: 100.0
+    # 经验奖励
+    ExperienceReward: 40
+    # 持续时间（分钟）
+    Duration: 12
+
+  # 末影人悬赏
+  ENDERMAN:
+    # 奖励物品
+    Reward:
+      # 末影珍珠
+      - "ITEM:ENDER_PEARL:4"
+      # 黑曜石
+      - "ITEM:OBSIDIAN:8"
+      # 末影箱
+      - "COMMAND:give {player} ender_chest"
+    # 需要击杀数量
+    RequiredKills: 4
+    # 金钱奖励
+    MoneyReward: 175.0
+    # 经验奖励
+    ExperienceReward: 60
+    # 持续时间（分钟）
+    Duration: 15
+
+  # 幻翼悬赏
+  PHANTOM:
+    # 奖励物品
+    Reward:
+      # 幻翼膜
+      - "ITEM:PHANTOM_MEMBRANE:8"
+      # 羽毛
+      - "ITEM:FEATHER:16"
+      # 缓降效果
+      - "COMMAND:effect give {player} slow_falling 600 0"
+    # 需要击杀数量
+    RequiredKills: 5
+    # 金钱奖励
+    MoneyReward: 125.0
+    # 经验奖励
+    ExperienceReward: 45
+    # 持续时间（分钟）
+    Duration: 10
+
+  # 牛悬赏
+  COW:
+    # 奖励物品
+    Reward:
+      # 皮革
+      - "ITEM:LEATHER:16"
+      # 熟牛肉
+      - "ITEM:COOKED_BEEF:16"
+    # 需要击杀数量
+    RequiredKills: 15
+    # 金钱奖励
+    MoneyReward: 40.0
+    # 经验奖励
+    ExperienceReward: 15
+    # 持续时间（分钟）
+    Duration: 20
+
+  # 女巫悬赏
+  WITCH:
+    # 奖励物品
+    Reward:
+      # 萤石粉
+      - "ITEM:GLOWSTONE_DUST:16"
+      # 红石粉
+      - "ITEM:REDSTONE:16"
+      # 喷溅药水
+      - "ITEM:SPLASH_POTION:3"
+    # 需要击杀数量
+    RequiredKills: 4
+    # 金钱奖励
+    MoneyReward: 160.0
+    # 经验奖励
+    ExperienceReward: 55
+    # 持续时间（分钟）
+    Duration: 12
